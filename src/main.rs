@@ -8,6 +8,7 @@ fn main() {
         let res="salom";
         res.len()
     };
+    
     println!("{res}");
     test_fn(47,'a');
     start(); 
