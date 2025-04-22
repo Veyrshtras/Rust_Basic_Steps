@@ -1,0 +1,9 @@
+[package]
+name = "Rust_Basic_Steps"
+version = "0.1.0"
+edition = "2024"
+authors = ["Shohboz Juraev"]
+description = "This my first simple rustb project"
+
+[dependencies]
+rand = "0.9.1"
