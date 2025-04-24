@@ -2,20 +2,89 @@ use rand;
 use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
+use std::io::stdin;
 
 fn main() {
-    let res:usize={
-        let res="salom";
-        res.len()
-    };
-    
-    println!("{res}");
-    test_fn(47,'a');
-    start(); 
+
+
+
+    // summary_problems();
+    // test_fn(47,'a');
+    // start();
 }
+
+fn summary_problems(){
+    let mut str=String::new();
+    stdin()
+        .read_line(&mut str)
+        .expect("Failed read line.");
+    let mut n: i32= match str.trim().parse(){
+        Ok(num)=>num,
+        Err(_)=>0
+    };
+    let mut fibo1 = 0;
+    let mut fibo2 = 1;
+    loop {
+        if n==0 {
+            println!("Finish.");
+            break
+        }
+        println!("{n} : {fibo2}");
+        fibo2=fibo1+fibo2;
+        fibo1=fibo2-fibo1;
+        n=n-1;
+    }
+
+}
+
 fn test_fn(x: u32, c: char)-> u32{
+    let arr = [1, 2, 3, 4, 5];
+    let mut indx=0;
+    while arr.len()-1>=indx {
+        println!("result: {}", arr[indx]);
+        indx=indx+1
+    }
+
+    for item in (1..6).rev() {
+        println!("{item}")
+    }
+    let mut count=0;
+    'counting_up: loop {
+        println!("count: {count}");
+        let mut remain=0;
+        loop {
+            if count>1 {
+                break 'counting_up;
+            };
+            if remain > 9 {
+                break;
+            }
+            println!("remain: {remain}");
+            remain = remain + 1;
+        };
+        count=count+1;
+    }
+
+    let res:String={
+        let res="hello world";
+        res.len().to_string()
+    };
+
+    if match res.trim().cmp("11"){
+        Ordering::Equal=>true,
+        Ordering::Greater=>false,
+        Ordering::Less=> false
+    }{
+        println!("{res} is bigger then 5");
+    }else {
+        println!("{res} is not valid");
+    }
+
+    println!("{res}");
+
+    let x=x+1;
     println!("{c} is equals to {x} in ASCII code.");
-    return x
+    x
 }
 fn start(){
     let arr=[2;7];
