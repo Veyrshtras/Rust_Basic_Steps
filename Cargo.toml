@@ -6,4 +6,4 @@ authors = ["Shohboz Juraev"]
 description = "This my first simple rustb project"
 
 [dependencies]
-rand = "0.9.1"
+rand="0.9.0"
