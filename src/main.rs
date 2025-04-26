@@ -5,12 +5,50 @@ use std::io;
 use std::io::stdin;
 
 fn main() {
-
-
-
+    
+    let user1=User{
+        name: String::from("Jone"),
+        age: 31,
+        step: 4,
+        is_student: true
+    };
+    println!("{}", user1.find_age());
+    // user1.age=32;
+    // println!("about user: {user1:#?} ");
+    // let user2=User{
+    //     age: 50,
+    //     ..user1
+    // };
+    // 
+    // println!("{user2:#?}");
+    
+    // dbg!(&user1);
+    // 
+    // let mut s = String::from("hello");
+    // find_first(&mut s[..3]);
+    // find_first(&mut s[3..]);
     // summary_problems();
     // test_fn(47,'a');
     // start();
+    
+}
+#[derive(Debug)]
+struct User {
+    name: String,
+    age: i8,
+    step: i8,
+    is_student: bool,
+    
+}
+impl User{
+
+    fn find_age(&self)->i8{
+        self.age*self.step
+    }
+}
+
+fn find_first(s: &mut str){
+    println!("{s}")
 }
 
 fn summary_problems(){
